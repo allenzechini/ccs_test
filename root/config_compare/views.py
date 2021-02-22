@@ -56,7 +56,6 @@ class CompareConfigView(FormView):
             second_file = request.POST.get('second_file_field')
             diff_contents = do_diff(first_file, second_file)
             return HttpResponse(diff_contents) # requires user to go back via the browser
-            # return self.form_valid(form)
         else:
             return self.form_invalid(form)
         return render(request, 'compare.html', {'form': form})
@@ -78,7 +77,7 @@ class UploadConfigView(FormView):
             return HttpResponseRedirect(reverse('upload_success'))
         else:
             return self.form_invalid(form)
-        # return render(request, 'upload.html', {'form': form})
+        return render(request, 'upload.html', {'form': form})
 
 def index(request):
     return render(request, 'index.html')
