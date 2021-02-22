@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{% block title %}<title>Config. Compare & Store</title>{% endblock %}
+		{% load static %}<link href="{% static 'css/style.css' %}" rel="stylesheet">
+	</head>
+	<body>
+		<header>
+			{% load static %}<img src="{% static 'images/logo.png' %}" alt="">
+			<h1>Configuration Comparison & Storage</h1>
+			<div class="header-columns">
+				<div class="header-column">
+					<h2><a href="{% url 'upload_config' %}">Upload</a></h2>
+				</div>
+				<div class="header-column">
+					<h2><a href="{% url 'compare_config' %}">Compare</a></h2>
+				</div>
+			</div>
+		</header>
+		<main>
+			{% block content %}
+			{% endblock %}
+		</main>
+		<footer>
+			<h2>Contact Info</h2>
+			<p>allen@shotover   |   5660 Airport Blvd, Suite 101, Boulder, CO 80301 USA    |   +1 (720) 744-3300 ext. 344</p>
+			<p>Return to <a href="{% url 'index' %}">homepage</a></p> 
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,10 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+	<h2>Compare two configurations</h2>
+	<p>(.js or .json file)</p>
+	<p>Comparison successful! See below for details</p>
+	<!-- <p><a href="{{ diff_file_full }}" target="_blank">New comparison</a></p> -->
+	<p>New comparison here:</p><a href="diffs/{{ diff_file }}" target="_blank">{{ diff_file }}</a>
+	<p><a href="{% url 'compare_config' %}">Compare</a> more files</p>
+{% endblock %}

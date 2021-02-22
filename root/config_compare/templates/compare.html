@@ -1,0 +1,23 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+	<div class="main-columns">
+		<div class="main-column">
+			<form action="{% url 'compare_config' %}"
+			  enctype="multipart/form-data"
+			  method="POST">
+				<h2>Compare two configurations</h2>
+				{% csrf_token %}
+				<p>First configuration</p>
+				{{ form.first_file_field }}
+				<br>
+				<p>Second configuration</p>
+				{{ form.second_file_field }}
+				<br><br>
+				<!-- <input id="up-butt" type="submit" value="Compare Files" target="_blank"> -->
+				<input id="compare-butt" type="submit" value="Compare Files">
+			</form>
+		</div>
+	</div>
+	{% load static %}<script src="{% static 'js/compare.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+	<h2>Upload your configuration file(s)</h2>
+	<p>Please upload .js or .json file(s) only</p>
+	<div class="button-div">
+		<!-- Must validate file size and types on server side -->
+		<form action=""
+			  enctype="multipart/form-data"
+			  method="POST">
+			{% csrf_token %}
+			{{ form }}
+			<br><br>
+			<input id="up-butt" type="submit" value="Upload File(s)">
+		</form>
+	</div>
+	{% load static %}<script src="{% static '/js/upload.js' %}"></script>
+{% endblock %}
